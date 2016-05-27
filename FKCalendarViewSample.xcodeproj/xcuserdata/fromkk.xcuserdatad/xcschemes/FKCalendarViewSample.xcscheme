@@ -48,6 +48,16 @@
                ReferencedContainer = "container:FKCalendarViewSample.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AD5AA4491CF8821C0095376C"
+               BuildableName = "FKCalendarViewTests.xctest"
+               BlueprintName = "FKCalendarViewTests"
+               ReferencedContainer = "container:FKCalendarViewSample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

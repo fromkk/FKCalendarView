@@ -14,6 +14,14 @@
 		AD5AA4121CF880940095376C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5AA4101CF880940095376C /* LaunchScreen.storyboard */; };
 		AD5AA41D1CF880940095376C /* FKCalendarViewSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA41C1CF880940095376C /* FKCalendarViewSampleTests.swift */; };
 		AD5AA4281CF880940095376C /* FKCalendarViewSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4271CF880940095376C /* FKCalendarViewSampleUITests.swift */; };
+		AD5AA4391CF880D30095376C /* FKCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4361CF880D30095376C /* FKCalendarView.swift */; };
+		AD5AA43A1CF880D30095376C /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4371CF880D30095376C /* NSDateExtension.swift */; };
+		AD5AA43B1CF880D30095376C /* once.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4381CF880D30095376C /* once.swift */; };
+		AD5AA4441CF8821B0095376C /* FKCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5AA4431CF8821B0095376C /* FKCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD5AA44B1CF8821C0095376C /* FKCalendarView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */; };
+		AD5AA4521CF8821C0095376C /* FKCalendarViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4511CF8821C0095376C /* FKCalendarViewTests.swift */; };
+		AD5AA4561CF8821C0095376C /* FKCalendarView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */; };
+		AD5AA4571CF8821C0095376C /* FKCalendarView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +39,42 @@
 			remoteGlobalIDString = AD5AA4031CF880940095376C;
 			remoteInfo = FKCalendarViewSample;
 		};
+		AD5AA44C1CF8821C0095376C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5AA3FC1CF880940095376C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5AA4401CF8821B0095376C;
+			remoteInfo = FKCalendarView;
+		};
+		AD5AA44E1CF8821C0095376C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5AA3FC1CF880940095376C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5AA4031CF880940095376C;
+			remoteInfo = FKCalendarViewSample;
+		};
+		AD5AA4541CF8821C0095376C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5AA3FC1CF880940095376C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5AA4401CF8821B0095376C;
+			remoteInfo = FKCalendarView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD5AA45B1CF8821C0095376C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AD5AA4571CF8821C0095376C /* FKCalendarView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD5AA4041CF880940095376C /* FKCalendarViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FKCalendarViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +90,15 @@
 		AD5AA4231CF880940095376C /* FKCalendarViewSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FKCalendarViewSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5AA4271CF880940095376C /* FKCalendarViewSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKCalendarViewSampleUITests.swift; sourceTree = "<group>"; };
 		AD5AA4291CF880940095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD5AA4361CF880D30095376C /* FKCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKCalendarView.swift; sourceTree = "<group>"; };
+		AD5AA4371CF880D30095376C /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		AD5AA4381CF880D30095376C /* once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = once.swift; sourceTree = "<group>"; };
+		AD5AA4411CF8821B0095376C /* FKCalendarView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FKCalendarView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5AA4431CF8821B0095376C /* FKCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKCalendarView.h; sourceTree = "<group>"; };
+		AD5AA4451CF8821B0095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD5AA44A1CF8821C0095376C /* FKCalendarViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FKCalendarViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5AA4511CF8821C0095376C /* FKCalendarViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKCalendarViewTests.swift; sourceTree = "<group>"; };
+		AD5AA4531CF8821C0095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5AA4561CF8821C0095376C /* FKCalendarView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,15 +124,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD5AA43D1CF8821B0095376C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5AA4471CF8821C0095376C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5AA44B1CF8821C0095376C /* FKCalendarView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AD5AA3FB1CF880940095376C = {
 			isa = PBXGroup;
 			children = (
+				AD5AA4351CF880AA0095376C /* Classes */,
 				AD5AA4061CF880940095376C /* FKCalendarViewSample */,
 				AD5AA41B1CF880940095376C /* FKCalendarViewSampleTests */,
 				AD5AA4261CF880940095376C /* FKCalendarViewSampleUITests */,
+				AD5AA4421CF8821B0095376C /* FKCalendarView */,
+				AD5AA4501CF8821C0095376C /* FKCalendarViewTests */,
 				AD5AA4051CF880940095376C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +161,8 @@
 				AD5AA4041CF880940095376C /* FKCalendarViewSample.app */,
 				AD5AA4181CF880940095376C /* FKCalendarViewSampleTests.xctest */,
 				AD5AA4231CF880940095376C /* FKCalendarViewSampleUITests.xctest */,
+				AD5AA4411CF8821B0095376C /* FKCalendarView.framework */,
+				AD5AA44A1CF8821C0095376C /* FKCalendarViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +198,46 @@
 			path = FKCalendarViewSampleUITests;
 			sourceTree = "<group>";
 		};
+		AD5AA4351CF880AA0095376C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AD5AA4361CF880D30095376C /* FKCalendarView.swift */,
+				AD5AA4371CF880D30095376C /* NSDateExtension.swift */,
+				AD5AA4381CF880D30095376C /* once.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD5AA4421CF8821B0095376C /* FKCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				AD5AA4431CF8821B0095376C /* FKCalendarView.h */,
+				AD5AA4451CF8821B0095376C /* Info.plist */,
+			);
+			path = FKCalendarView;
+			sourceTree = "<group>";
+		};
+		AD5AA4501CF8821C0095376C /* FKCalendarViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD5AA4511CF8821C0095376C /* FKCalendarViewTests.swift */,
+				AD5AA4531CF8821C0095376C /* Info.plist */,
+			);
+			path = FKCalendarViewTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AD5AA43E1CF8821B0095376C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5AA4441CF8821B0095376C /* FKCalendarView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		AD5AA4031CF880940095376C /* FKCalendarViewSample */ = {
@@ -135,10 +247,12 @@
 				AD5AA4001CF880940095376C /* Sources */,
 				AD5AA4011CF880940095376C /* Frameworks */,
 				AD5AA4021CF880940095376C /* Resources */,
+				AD5AA45B1CF8821C0095376C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AD5AA4551CF8821C0095376C /* PBXTargetDependency */,
 			);
 			name = FKCalendarViewSample;
 			productName = FKCalendarViewSample;
@@ -181,6 +295,43 @@
 			productReference = AD5AA4231CF880940095376C /* FKCalendarViewSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AD5AA4401CF8821B0095376C /* FKCalendarView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5AA4581CF8821C0095376C /* Build configuration list for PBXNativeTarget "FKCalendarView" */;
+			buildPhases = (
+				AD5AA43C1CF8821B0095376C /* Sources */,
+				AD5AA43D1CF8821B0095376C /* Frameworks */,
+				AD5AA43E1CF8821B0095376C /* Headers */,
+				AD5AA43F1CF8821B0095376C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FKCalendarView;
+			productName = FKCalendarView;
+			productReference = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD5AA4491CF8821C0095376C /* FKCalendarViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5AA45C1CF8821C0095376C /* Build configuration list for PBXNativeTarget "FKCalendarViewTests" */;
+			buildPhases = (
+				AD5AA4461CF8821C0095376C /* Sources */,
+				AD5AA4471CF8821C0095376C /* Frameworks */,
+				AD5AA4481CF8821C0095376C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD5AA44D1CF8821C0095376C /* PBXTargetDependency */,
+				AD5AA44F1CF8821C0095376C /* PBXTargetDependency */,
+			);
+			name = FKCalendarViewTests;
+			productName = FKCalendarViewTests;
+			productReference = AD5AA44A1CF8821C0095376C /* FKCalendarViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +353,13 @@
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = AD5AA4031CF880940095376C;
 					};
+					AD5AA4401CF8821B0095376C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AD5AA4491CF8821C0095376C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AD5AA4031CF880940095376C;
+					};
 				};
 			};
 			buildConfigurationList = AD5AA3FF1CF880940095376C /* Build configuration list for PBXProject "FKCalendarViewSample" */;
@@ -220,6 +378,8 @@
 				AD5AA4031CF880940095376C /* FKCalendarViewSample */,
 				AD5AA4171CF880940095376C /* FKCalendarViewSampleTests */,
 				AD5AA4221CF880940095376C /* FKCalendarViewSampleUITests */,
+				AD5AA4401CF8821B0095376C /* FKCalendarView */,
+				AD5AA4491CF8821C0095376C /* FKCalendarViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +409,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD5AA43F1CF8821B0095376C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5AA4481CF8821C0095376C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -256,7 +430,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5AA43A1CF880D30095376C /* NSDateExtension.swift in Sources */,
+				AD5AA4391CF880D30095376C /* FKCalendarView.swift in Sources */,
 				AD5AA40A1CF880940095376C /* ViewController.swift in Sources */,
+				AD5AA43B1CF880D30095376C /* once.swift in Sources */,
 				AD5AA4081CF880940095376C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +454,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD5AA43C1CF8821B0095376C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5AA4461CF8821C0095376C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5AA4521CF8821C0095376C /* FKCalendarViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,6 +481,21 @@
 			isa = PBXTargetDependency;
 			target = AD5AA4031CF880940095376C /* FKCalendarViewSample */;
 			targetProxy = AD5AA4241CF880940095376C /* PBXContainerItemProxy */;
+		};
+		AD5AA44D1CF8821C0095376C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5AA4401CF8821B0095376C /* FKCalendarView */;
+			targetProxy = AD5AA44C1CF8821C0095376C /* PBXContainerItemProxy */;
+		};
+		AD5AA44F1CF8821C0095376C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5AA4031CF880940095376C /* FKCalendarViewSample */;
+			targetProxy = AD5AA44E1CF8821C0095376C /* PBXContainerItemProxy */;
+		};
+		AD5AA4551CF8821C0095376C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5AA4401CF8821B0095376C /* FKCalendarView */;
+			targetProxy = AD5AA4541CF8821C0095376C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -465,6 +672,66 @@
 			};
 			name = Release;
 		};
+		AD5AA4591CF8821C0095376C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FKCalendarView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.FKCalendarView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD5AA45A1CF8821C0095376C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FKCalendarView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.FKCalendarView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD5AA45D1CF8821C0095376C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FKCalendarViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.FKCalendarViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKCalendarViewSample.app/FKCalendarViewSample";
+			};
+			name = Debug;
+		};
+		AD5AA45E1CF8821C0095376C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FKCalendarViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.fromkk.FKCalendarViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FKCalendarViewSample.app/FKCalendarViewSample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +765,22 @@
 			buildConfigurations = (
 				AD5AA4331CF880940095376C /* Debug */,
 				AD5AA4341CF880940095376C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD5AA4581CF8821C0095376C /* Build configuration list for PBXNativeTarget "FKCalendarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5AA4591CF8821C0095376C /* Debug */,
+				AD5AA45A1CF8821C0095376C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD5AA45C1CF8821C0095376C /* Build configuration list for PBXNativeTarget "FKCalendarViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5AA45D1CF8821C0095376C /* Debug */,
+				AD5AA45E1CF8821C0095376C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
