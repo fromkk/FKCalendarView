@@ -86,6 +86,7 @@ public class FKCalendarView: UICollectionView
     private (set) public var numberOfWeeks :Int = 0
     private (set) public var numberOfDays :Int = 0
     public var calendarDelegate: FKCalendarViewDelegate?
+    public var weekdayHeight: CGFloat = 32.0
     
     public convenience init(frame: CGRect, date: NSDate)
     {
@@ -183,7 +184,7 @@ extension FKCalendarView: UICollectionViewDelegateFlowLayout
         if 0 == indexPath.section
         {
             var size: CGSize = layout.itemSize
-            size.height = 24.0
+            size.height = self.weekdayHeight
             return size
         }
         return layout.itemSize
