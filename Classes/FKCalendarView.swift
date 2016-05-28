@@ -23,7 +23,7 @@ public protocol FKCalendarViewDelegate: class
 {
     func dequeueReusableWeekdayCellCollectionView(collectionView: UICollectionView, indexPath: NSIndexPath, weekDay: FKCalendarViewWeekday) -> UICollectionViewCell
     func dequeueReusableDateCellWithCollectionView(collectionView: UICollectionView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell
-    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: FKCalendarDateCell, date: NSDate) -> Void
+    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: NSDate) -> Void
 }
 
 public class FKCalendarViewLayout: UICollectionViewFlowLayout
@@ -133,7 +133,7 @@ extension FKCalendarView: UICollectionViewDataSource
             {
                 fatalError("FKCalendarViewWeekday initialize failed")
             }
-            guard let weekdayCell: FKCalendarWeekdayCell = self.calendarDelegate?.dequeueReusableWeekdayCellCollectionView(self, indexPath: indexPath, weekDay: weekday) as? FKCalendarWeekdayCell else
+            guard let weekdayCell: UICollectionViewCell = self.calendarDelegate?.dequeueReusableWeekdayCellCollectionView(self, indexPath: indexPath, weekDay: weekday) else
             {
                 fatalError("FKCalendarWeekdayCell")
             }
@@ -161,7 +161,7 @@ extension FKCalendarView: UICollectionViewDelegate {
             return
         }
         
-        guard let cell: FKCalendarDateCell = collectionView.cellForItemAtIndexPath(indexPath) as? FKCalendarDateCell else
+        guard let cell: UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) else
         {
             return
         }
@@ -188,57 +188,5 @@ extension FKCalendarView: UICollectionViewDelegateFlowLayout
             return size
         }
         return layout.itemSize
-    }
-}
-
-public class FKCalendarWeekdayCell: UICollectionViewCell
-{
-    public static let cellIdentifier: String = "FKCalendarWeekdayCell"
-    public lazy var weekLabel: UILabel = {
-        let result: UILabel = UILabel()
-        result.textAlignment = NSTextAlignment.Center
-        result.font = UIFont(name: "Avenir-Bold", size: 12.0)
-        result.textColor = UIColor(white: 0.25, alpha: 1.0)
-        return result
-    }()
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-        self.contentView.addSubview(self.weekLabel)
-        self.layer.cornerRadius = 6.0
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.weekLabel.frame = self.bounds
-    }
-}
-
-public class FKCalendarDateCell: UICollectionViewCell
-{
-    public static let cellIdentifier: String = "FKCalendarDateCell"
-    public lazy var dateLabel: UILabel = {
-        let result: UILabel = UILabel()
-        result.textAlignment = NSTextAlignment.Center
-        result.font = UIFont(name: "Avenir-Bold", size: 12.0)
-        result.textColor = UIColor(white: 0.1, alpha: 1.0)
-        return result
-    }()
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.contentView.addSubview(self.dateLabel)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.dateLabel.frame = self.bounds
     }
 }

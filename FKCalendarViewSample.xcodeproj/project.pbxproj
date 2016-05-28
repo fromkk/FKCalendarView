@@ -25,6 +25,7 @@
 		AD5AA4641CF9AF920095376C /* FKCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4361CF880D30095376C /* FKCalendarView.swift */; };
 		AD5AA4651CF9AF920095376C /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4371CF880D30095376C /* NSDateExtension.swift */; };
 		AD5AA4661CF9AF920095376C /* once.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4381CF880D30095376C /* once.swift */; };
+		AD5AA46E1CF9CB760095376C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA46D1CF9CB760095376C /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		AD5AA44A1CF8821C0095376C /* FKCalendarViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FKCalendarViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5AA4511CF8821C0095376C /* FKCalendarViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKCalendarViewTests.swift; sourceTree = "<group>"; };
 		AD5AA4531CF8821C0095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD5AA46D1CF9CB760095376C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				AD5AA40E1CF880940095376C /* Assets.xcassets */,
 				AD5AA4101CF880940095376C /* LaunchScreen.storyboard */,
 				AD5AA4131CF880940095376C /* Info.plist */,
+				AD5AA46D1CF9CB760095376C /* View.swift */,
 			);
 			path = FKCalendarViewSample;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				AD5AA43A1CF880D30095376C /* NSDateExtension.swift in Sources */,
 				AD5AA4391CF880D30095376C /* FKCalendarView.swift in Sources */,
+				AD5AA46E1CF9CB760095376C /* View.swift in Sources */,
 				AD5AA40A1CF880940095376C /* ViewController.swift in Sources */,
 				AD5AA43B1CF880D30095376C /* once.swift in Sources */,
 				AD5AA4081CF880940095376C /* AppDelegate.swift in Sources */,

@@ -104,7 +104,7 @@ extension ViewController: FKCalendarViewDelegate
         return cell
     }
     
-    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: FKCalendarDateCell, date: NSDate) {
+    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: NSDate) {
         print(date)
     }
 }
