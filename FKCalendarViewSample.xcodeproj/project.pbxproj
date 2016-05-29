@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD4B527A1CFADBFF004CCB37 /* SectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4B52791CFADBFF004CCB37 /* SectionFooterView.swift */; };
 		AD5AA4081CF880940095376C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4071CF880940095376C /* AppDelegate.swift */; };
 		AD5AA40A1CF880940095376C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4091CF880940095376C /* ViewController.swift */; };
 		AD5AA40D1CF880940095376C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5AA40B1CF880940095376C /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		AD5AA4281CF880940095376C /* FKCalendarViewSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4271CF880940095376C /* FKCalendarViewSampleUITests.swift */; };
 		AD5AA4391CF880D30095376C /* FKCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4361CF880D30095376C /* FKCalendarView.swift */; };
 		AD5AA43A1CF880D30095376C /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4371CF880D30095376C /* NSDateExtension.swift */; };
-		AD5AA43B1CF880D30095376C /* once.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4381CF880D30095376C /* once.swift */; };
 		AD5AA4441CF8821B0095376C /* FKCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5AA4431CF8821B0095376C /* FKCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD5AA44B1CF8821C0095376C /* FKCalendarView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */; };
 		AD5AA4521CF8821C0095376C /* FKCalendarViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4511CF8821C0095376C /* FKCalendarViewTests.swift */; };
@@ -24,7 +24,6 @@
 		AD5AA4571CF8821C0095376C /* FKCalendarView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD5AA4411CF8821B0095376C /* FKCalendarView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD5AA4641CF9AF920095376C /* FKCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4361CF880D30095376C /* FKCalendarView.swift */; };
 		AD5AA4651CF9AF920095376C /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4371CF880D30095376C /* NSDateExtension.swift */; };
-		AD5AA4661CF9AF920095376C /* once.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA4381CF880D30095376C /* once.swift */; };
 		AD5AA46E1CF9CB760095376C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5AA46D1CF9CB760095376C /* View.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD4B52791CFADBFF004CCB37 /* SectionFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionFooterView.swift; sourceTree = "<group>"; };
 		AD5AA4041CF880940095376C /* FKCalendarViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FKCalendarViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5AA4071CF880940095376C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5AA4091CF880940095376C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +96,6 @@
 		AD5AA4291CF880940095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD5AA4361CF880D30095376C /* FKCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKCalendarView.swift; sourceTree = "<group>"; };
 		AD5AA4371CF880D30095376C /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
-		AD5AA4381CF880D30095376C /* once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = once.swift; sourceTree = "<group>"; };
 		AD5AA4411CF8821B0095376C /* FKCalendarView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FKCalendarView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5AA4431CF8821B0095376C /* FKCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKCalendarView.h; sourceTree = "<group>"; };
 		AD5AA4451CF8821B0095376C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +176,7 @@
 			children = (
 				AD5AA4071CF880940095376C /* AppDelegate.swift */,
 				AD5AA4091CF880940095376C /* ViewController.swift */,
+				AD4B52791CFADBFF004CCB37 /* SectionFooterView.swift */,
 				AD5AA40B1CF880940095376C /* Main.storyboard */,
 				AD5AA40E1CF880940095376C /* Assets.xcassets */,
 				AD5AA4101CF880940095376C /* LaunchScreen.storyboard */,
@@ -209,7 +209,6 @@
 			children = (
 				AD5AA4361CF880D30095376C /* FKCalendarView.swift */,
 				AD5AA4371CF880D30095376C /* NSDateExtension.swift */,
-				AD5AA4381CF880D30095376C /* once.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -437,10 +436,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5AA43A1CF880D30095376C /* NSDateExtension.swift in Sources */,
+				AD4B527A1CFADBFF004CCB37 /* SectionFooterView.swift in Sources */,
 				AD5AA4391CF880D30095376C /* FKCalendarView.swift in Sources */,
 				AD5AA46E1CF9CB760095376C /* View.swift in Sources */,
 				AD5AA40A1CF880940095376C /* ViewController.swift in Sources */,
-				AD5AA43B1CF880D30095376C /* once.swift in Sources */,
 				AD5AA4081CF880940095376C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +466,6 @@
 			files = (
 				AD5AA4641CF9AF920095376C /* FKCalendarView.swift in Sources */,
 				AD5AA4651CF9AF920095376C /* NSDateExtension.swift in Sources */,
-				AD5AA4661CF9AF920095376C /* once.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
