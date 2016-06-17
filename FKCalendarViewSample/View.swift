@@ -13,7 +13,7 @@ public class FKCalendarWeekdayCell: UICollectionViewCell
     public static let cellIdentifier: String = "FKCalendarWeekdayCell"
     public lazy var weekLabel: UILabel = {
         let result: UILabel = UILabel()
-        result.textAlignment = NSTextAlignment.Center
+        result.textAlignment = NSTextAlignment.center
         result.font = UIFont(name: "Avenir-Bold", size: 12.0)
         result.textColor = UIColor(white: 0.25, alpha: 1.0)
         return result
@@ -39,7 +39,7 @@ public class FKCalendarDateCell: UICollectionViewCell
     public static let cellIdentifier: String = "FKCalendarDateCell"
     public lazy var dateLabel: UILabel = {
         let result: UILabel = UILabel()
-        result.textAlignment = NSTextAlignment.Center
+        result.textAlignment = NSTextAlignment.center
         result.font = UIFont(name: "Avenir-Bold", size: 12.0)
         result.textColor = UIColor(white: 0.1, alpha: 1.0)
         return result

@@ -13,7 +13,7 @@ internal class SectionFooter: FKCalendarViewReusableView
     static let footerIdentifier: String = "SectionHeader"
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.lightGray()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("FKCalendarViewReusableView must be initialize with init(frame:)")

@@ -9,13 +9,13 @@
 import UIKit
 
 @objc public enum FKCalendarViewWeekday: Int {
-    case Sunday = 0
-    case Monday
-    case Tuesday
-    case Wednesday
-    case Thursday
-    case Friday
-    case Saturday
+    case sunday = 0
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
 }
 
 internal class FKCalendarViewReusableView: UICollectionReusableView {
@@ -23,13 +23,13 @@ internal class FKCalendarViewReusableView: UICollectionReusableView {
 }
 
 @objc public protocol FKCalendarViewDelegate: class {
-    func dequeueReusableWeekdayCellWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath, weekDay: FKCalendarViewWeekday) -> UICollectionViewCell
-    func dequeueReusableDateCellWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell
-    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: NSDate) -> Void
-    optional func dequeueReusableSectionHeaderWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath) -> UICollectionReusableView
-    optional func dequeueReusableSectionFooterWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath) -> UICollectionReusableView
-    optional func sectionHeaderSizeWithCalendarView(calendarView: FKCalendarView, section: Int) -> CGSize
-    optional func sectionFooterSizeWithCalendarView(calendarView: FKCalendarView, section: Int) -> CGSize
+    func dequeueReusableWeekdayCellWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath, weekDay: FKCalendarViewWeekday) -> UICollectionViewCell
+    func dequeueReusableDateCellWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath, date: Date) -> UICollectionViewCell
+    func calendarView(_ calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: Date) -> Void
+    @objc optional func dequeueReusableSectionHeaderWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath) -> UICollectionReusableView
+    @objc optional func dequeueReusableSectionFooterWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath) -> UICollectionReusableView
+    @objc optional func sectionHeaderSizeWithCalendarView(_ calendarView: FKCalendarView, section: Int) -> CGSize
+    @objc optional func sectionFooterSizeWithCalendarView(_ calendarView: FKCalendarView, section: Int) -> CGSize
 }
 
 public class FKCalendarViewLayout: UICollectionViewFlowLayout {
@@ -60,45 +60,45 @@ public class FKCalendarViewLayout: UICollectionViewFlowLayout {
 }
 
 public class FKCalendarView: UICollectionView {
-    public var date: NSDate = NSDate() {
+    public var date: Date = Date() {
         didSet {
-            let calendar: NSCalendar = NSCalendar.sharedCalendar
-            let components: NSDateComponents = calendar.components([.Year, .Month, .Day], fromDate: self.date)
-            self.year = components.year
-            self.month = components.month
-            self.day = components.day
+            let calendar: Calendar = Calendar.sharedCalendar
+            let components: DateComponents = calendar.components([.year, .month, .day], from: self.date)
+            self.year = components.year!
+            self.month = components.month!
+            self.day = components.day!
             self.numberOfWeeks = self.date.numberOfWeeks
             self.numberOfDays = self.date.numberOfDays
         }
     }
     private (set) public lazy var year: Int = {
-        let calenndar: NSCalendar = NSCalendar.sharedCalendar
-        return calenndar.component(NSCalendarUnit.Year, fromDate: self.date)
+        let calenndar: Calendar = Calendar.sharedCalendar
+        return calenndar.component(Calendar.Unit.year, from: self.date)
     }()
 
     private (set) public lazy var month: Int = {
-        let calenndar: NSCalendar = NSCalendar.sharedCalendar
-        return calenndar.component(NSCalendarUnit.Month, fromDate: self.date)
+        let calenndar: Calendar = Calendar.sharedCalendar
+        return calenndar.component(Calendar.Unit.month, from: self.date)
     }()
 
     private (set) public lazy var day: Int = {
-        let calenndar: NSCalendar = NSCalendar.sharedCalendar
-        return calenndar.component(NSCalendarUnit.Day, fromDate: self.date)
+        let calenndar: Calendar = Calendar.sharedCalendar
+        return calenndar.component(Calendar.Unit.day, from: self.date)
     }()
     private (set) public var numberOfWeeks :Int = 0
     private (set) public var numberOfDays :Int = 0
     public var calendarDelegate: FKCalendarViewDelegate?
     public var weekdayHeight: CGFloat = 32.0
 
-    public convenience init(frame: CGRect, date: NSDate) {
+    public convenience init(frame: CGRect, date: Date) {
         let layout: FKCalendarViewLayout = FKCalendarViewLayout(frame: frame, margin: 6.0)
         self.init(frame: frame, collectionViewLayout: layout)
 
-        self.registerClass(FKCalendarViewReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FKCalendarViewReusableView.viewIdentifier)
-        self.registerClass(FKCalendarViewReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: FKCalendarViewReusableView.viewIdentifier)
+        self.register(FKCalendarViewReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FKCalendarViewReusableView.viewIdentifier)
+        self.register(FKCalendarViewReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: FKCalendarViewReusableView.viewIdentifier)
         defer {
             self.date = date
-            self.backgroundColor = UIColor.whiteColor()
+            self.backgroundColor = UIColor.white()
             self.dataSource = self
             self.delegate = self
         }
@@ -121,16 +121,16 @@ public class FKCalendarView: UICollectionView {
 }
 
 extension FKCalendarView: UICollectionViewDataSource {
-    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.numberOfWeeks + 1
     }
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Int(FKCalendarViewLayout.numberOfWeekDays)
     }
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell
-        if 0 == indexPath.section {
-            guard let weekday: FKCalendarViewWeekday = FKCalendarViewWeekday(rawValue: indexPath.row) else {
+        if 0 == (indexPath as NSIndexPath).section {
+            guard let weekday: FKCalendarViewWeekday = FKCalendarViewWeekday(rawValue: (indexPath as NSIndexPath).row) else {
                 fatalError("FKCalendarViewWeekday initialize failed")
             }
             guard let weekdayCell: UICollectionViewCell = self.calendarDelegate?.dequeueReusableWeekdayCellWithCalendarView(self, indexPath: indexPath, weekDay: weekday) else {
@@ -138,7 +138,7 @@ extension FKCalendarView: UICollectionViewDataSource {
             }
             cell = weekdayCell
         } else {
-            guard let date: NSDate = self.date.dateFromIndexPath(indexPath) else {
+            guard let date: Date = self.date.dateFromIndexPath(indexPath) else {
                 fatalError("date initialize failed.")
             }
             guard let dateCell: UICollectionViewCell = self.calendarDelegate?.dequeueReusableDateCellWithCalendarView(self, indexPath: indexPath, date: date) else {
@@ -151,22 +151,23 @@ extension FKCalendarView: UICollectionViewDataSource {
 }
 
 extension FKCalendarView: UICollectionViewDelegate {
-    public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if 0 == indexPath.section {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if 0 == (indexPath as NSIndexPath).section {
             return
         }
 
-        guard let cell: UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath) else {
+        guard let cell: UICollectionViewCell = collectionView.cellForItem(at: indexPath) else {
             return
         }
 
-        guard let date: NSDate = self.date.dateFromIndexPath(indexPath) else {
+        guard let date: Date = self.date.dateFromIndexPath(indexPath) else {
             return
         }
         self.calendarDelegate?.calendarView(self, didSelectDayCell: cell, date: date)
     }
 
-    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionElementKindSectionHeader {
             guard let result: UICollectionReusableView = self.calendarDelegate?.dequeueReusableSectionHeaderWithCalendarView?(self, indexPath: indexPath) else {
                 return FKCalendarViewReusableView()
@@ -181,14 +182,14 @@ extension FKCalendarView: UICollectionViewDelegate {
         return FKCalendarViewReusableView()
     }
 
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         guard let result: CGSize = self.calendarDelegate?.sectionHeaderSizeWithCalendarView?(self, section: section) else {
             return CGSize.zero
         }
         return result
     }
 
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         guard let result: CGSize = self.calendarDelegate?.sectionFooterSizeWithCalendarView?(self, section: section) else {
             return CGSize.zero
         }
@@ -196,12 +197,12 @@ extension FKCalendarView: UICollectionViewDelegate {
     }
 }
 extension FKCalendarView: UICollectionViewDelegateFlowLayout {
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let layout: FKCalendarViewLayout = collectionView.collectionViewLayout as? FKCalendarViewLayout else {
             fatalError("FKCalendarViewLayout get failed")
         }
 
-        if 0 == indexPath.section {
+        if 0 == (indexPath as NSIndexPath).section {
             var size: CGSize = layout.itemSize
             size.height = self.weekdayHeight
             return size

@@ -8,72 +8,72 @@
 
 import Foundation
 
-internal extension NSCalendar
+internal extension Calendar
 {
-    static var sharedCalendar: NSCalendar {
-        let calendar: NSCalendar = NSCalendar.currentCalendar()
-        calendar.locale = NSLocale.systemLocale()
-        calendar.timeZone = NSTimeZone.systemTimeZone()
+    static var sharedCalendar: Calendar {
+        let calendar: Calendar = Calendar.current()
+        calendar.locale = Locale.system()
+        calendar.timeZone = TimeZone.system()
         return calendar
     }
 }
 
-internal extension NSDate
+internal extension Date
 {
     var numberOfDays: Int
     {
-        let calendar: NSCalendar = NSCalendar.sharedCalendar
-        let comp: NSDateComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
-        comp.month += 1
+        let calendar: Calendar = Calendar.sharedCalendar
+        var comp: DateComponents = calendar.components([.year, .month, .day], from: self)
+        comp.month? += 1
         comp.day = 0
         
-        guard let date = calendar.dateFromComponents(comp) else
+        guard let date = calendar.date(from: comp) else
         {
             return 0
         }
-        return calendar.component(.Day, fromDate: date)
+        return calendar.component(.day, from: date)
     }
     var numberOfWeeks: Int
     {
-        let calendar: NSCalendar = NSCalendar.sharedCalendar
-        let comp: NSDateComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
-        comp.month += 1
+        let calendar: Calendar = Calendar.sharedCalendar
+        var comp: DateComponents = calendar.components([.year, .month, .day], from: self)
+        comp.month? += 1
         comp.day = 0
         
-        guard let date = calendar.dateFromComponents(comp) else
+        guard let date = calendar.date(from: comp) else
         {
             return 0
         }
-        return calendar.component(.WeekOfMonth, fromDate: date)
+        return calendar.component(.weekOfMonth, from: date)
     }
-    func dateFromIndexPath(indexPath: NSIndexPath) -> NSDate? {
-        let calendar :NSCalendar = NSCalendar.sharedCalendar
+    func dateFromIndexPath(_ indexPath: IndexPath) -> Date? {
+        let calendar :Calendar = Calendar.sharedCalendar
         
-        let comp1 :NSDateComponents = calendar.components([.Year, .Month], fromDate: self)
-        let comp2 :NSDateComponents = NSDateComponents()
-        comp2.weekOfMonth = indexPath.section
-        comp2.weekday     = indexPath.row + 1
+        let comp1 :DateComponents = calendar.components([.year, .month], from: self)
+        var comp2 :DateComponents = DateComponents()
+        comp2.weekOfMonth = (indexPath as NSIndexPath).section
+        comp2.weekday     = (indexPath as NSIndexPath).row + 1
         comp2.year        = comp1.year
         comp2.month       = comp1.month
-        return calendar.dateFromComponents(comp2)
+        return calendar.date(from: comp2)
     }
 }
 
-public extension NSDate
+public extension Date
 {
     var year: Int
     {
-        let calendar: NSCalendar = NSCalendar.sharedCalendar
-        return calendar.component(NSCalendarUnit.Year, fromDate: self)
+        let calendar: Calendar = Calendar.sharedCalendar
+        return calendar.component(Calendar.Unit.year, from: self)
     }
     var month: Int
     {
-        let calendar: NSCalendar = NSCalendar.sharedCalendar
-        return calendar.component(NSCalendarUnit.Month, fromDate: self)
+        let calendar: Calendar = Calendar.sharedCalendar
+        return calendar.component(Calendar.Unit.month, from: self)
     }
     var day: Int
     {
-        let calendar: NSCalendar = NSCalendar.sharedCalendar
-        return calendar.component(NSCalendarUnit.Day, fromDate: self)
+        let calendar: Calendar = Calendar.sharedCalendar
+        return calendar.component(Calendar.Unit.day, from: self)
     }
 }

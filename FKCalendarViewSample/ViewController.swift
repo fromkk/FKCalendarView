@@ -14,19 +14,19 @@ extension FKCalendarViewWeekday
     {
         switch self
         {
-        case .Sunday:
+        case .sunday:
             return "Sun"
-        case .Monday:
+        case .monday:
             return "Mon"
-        case .Tuesday:
+        case .tuesday:
             return "Tue"
-        case .Wednesday:
+        case .wednesday:
             return "Wed"
-        case .Thursday:
+        case .thursday:
             return "Tur"
-        case .Friday:
+        case .friday:
             return "Fri"
-        case .Saturday:
+        case .saturday:
             return "Sat"
         }
     }
@@ -34,12 +34,12 @@ extension FKCalendarViewWeekday
 
 class ViewController: UIViewController {
     
-    lazy var date: NSDate = {
-        let comps: NSDateComponents = NSDateComponents()
+    lazy var date: Date = {
+        var comps: DateComponents = DateComponents()
         comps.year = 2016
-        comps.month = 1
+        comps.month = 6
         comps.day = 1
-        guard let date: NSDate = NSCalendar.sharedCalendar.dateFromComponents(comps) else
+        guard let date: Date = Calendar.sharedCalendar.date(from: comps) else
         {
             fatalError("date get failed")
         }
@@ -48,9 +48,9 @@ class ViewController: UIViewController {
     lazy var calendarView: FKCalendarView = {
         let result: FKCalendarView = FKCalendarView(frame: self.view.bounds, date: self.date)
         result.calendarDelegate = self
-        result.registerClass(FKCalendarWeekdayCell.self, forCellWithReuseIdentifier: FKCalendarWeekdayCell.cellIdentifier)
-        result.registerClass(FKCalendarDateCell.self, forCellWithReuseIdentifier: FKCalendarDateCell.cellIdentifier)
-        result.registerClass(SectionFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: SectionFooter.footerIdentifier)
+        result.register(FKCalendarWeekdayCell.self, forCellWithReuseIdentifier: FKCalendarWeekdayCell.cellIdentifier)
+        result.register(FKCalendarDateCell.self, forCellWithReuseIdentifier: FKCalendarDateCell.cellIdentifier)
+        result.register(SectionFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: SectionFooter.footerIdentifier)
         return result
     }()
     
@@ -80,16 +80,16 @@ class ViewController: UIViewController {
 
 extension ViewController: FKCalendarViewDelegate
 {
-    func dequeueReusableWeekdayCellWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath, weekDay: FKCalendarViewWeekday) -> UICollectionViewCell {
-        guard let cell: FKCalendarWeekdayCell = calendarView.dequeueReusableCellWithReuseIdentifier(FKCalendarWeekdayCell.cellIdentifier, forIndexPath: indexPath) as? FKCalendarWeekdayCell else
+    func dequeueReusableWeekdayCellWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath, weekDay: FKCalendarViewWeekday) -> UICollectionViewCell {
+        guard let cell: FKCalendarWeekdayCell = calendarView.dequeueReusableCell(withReuseIdentifier: FKCalendarWeekdayCell.cellIdentifier, for: indexPath) as? FKCalendarWeekdayCell else
         {
             fatalError("FKCalendarViewWeekday initialize failed")
         }
         cell.weekLabel.text = weekDay.toString()
         return cell
     }
-    func dequeueReusableDateCellWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath, date: NSDate) -> UICollectionViewCell {
-        guard let cell: FKCalendarDateCell = calendarView.dequeueReusableCellWithReuseIdentifier(FKCalendarDateCell.cellIdentifier, forIndexPath: indexPath) as? FKCalendarDateCell else
+    func dequeueReusableDateCellWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath, date: Date) -> UICollectionViewCell {
+        guard let cell: FKCalendarDateCell = calendarView.dequeueReusableCell(withReuseIdentifier: FKCalendarDateCell.cellIdentifier, for: indexPath) as? FKCalendarDateCell else
         {
             fatalError("FKCalendarDateCell initialize failed")
         }
@@ -103,18 +103,18 @@ extension ViewController: FKCalendarViewDelegate
         }
         return cell
     }
-    func dequeueReusableSectionFooterWithCalendarView(calendarView: FKCalendarView, indexPath: NSIndexPath) -> UICollectionReusableView {
-        guard let footer: SectionFooter = calendarView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: SectionFooter.footerIdentifier, forIndexPath: indexPath) as? SectionFooter else
+    func dequeueReusableSectionFooterWithCalendarView(_ calendarView: FKCalendarView, indexPath: IndexPath) -> UICollectionReusableView {
+        guard let footer: SectionFooter = calendarView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: SectionFooter.footerIdentifier, for: indexPath) as? SectionFooter else
         {
             return SectionFooter()
         }
         return footer
     }
-    func sectionFooterSizeWithCalendarView(calendarView: FKCalendarView, section: Int) -> CGSize {
+    func sectionFooterSizeWithCalendarView(_ calendarView: FKCalendarView, section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 1.0)
     }
     
-    func calendarView(calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: NSDate) {
+    func calendarView(_ calendarView: FKCalendarView, didSelectDayCell cell: UICollectionViewCell, date: Date) {
         print(date)
     }
 }
